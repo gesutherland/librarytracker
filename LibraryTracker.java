@@ -33,25 +33,32 @@ public class LibraryTracker {
             
             switch (choice) {
                 case "1":
+                    System.out.println("\n");
                     addBookMenu(scanner, currentUser);
                     break;
                 case "2":
+                    System.out.println("\n");
                     removeBookMenu(scanner, currentUser);
                     break;
                 case "3":
+                    System.out.println("\n");
                     currentUser.printShelf();
                     break;
                 case "4":
+                    System.out.println("\n");
                     searchBookMenu(scanner, currentUser);
                     break;
                 case "5":
+                    System.out.println("\n");
                     addSampleBooks(currentUser);
                     break;
                 case "6":
+                    System.out.println("\n");
                     running = false;
                     System.out.println("Thanks for using Library Tracker!");
                     break;
                 default:
+                    System.out.println("\n");
                     System.out.println("Invalid option. Please try again.");
             }
         }
