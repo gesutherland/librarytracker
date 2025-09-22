@@ -42,5 +42,25 @@ public class user {
         }
         System.out.println();
     }
-}
+    
+    // Search for a book by title
+    public book findBook(String title) {
+        return shelf.findBookByTitle(title);
+    }
+    
+    // Get all books (accessor for the underlying library)
+    public java.util.ArrayList<book> getAllBooks() {
+        return shelf.getAllBooks();
+    }
+    
+    // Display search results
+    public void searchAndDisplayBook(String title) {
+        book found = findBook(title);
+        if (found != null) {
+            System.out.println("Found: " + found.toString());
+        } else {
+            System.out.println("Book not found: " + title);
+        }
+    }
+}  
 
