@@ -20,14 +20,14 @@ public class library {
         books.add(b);
     }
 
-    public void removeBook(String title) {
-        // loop through and remove first matching book
+    public boolean removeBook(String title) {
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getTitle().equalsIgnoreCase(title)) {
                 books.remove(i);
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     
