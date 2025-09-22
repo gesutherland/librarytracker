@@ -9,11 +9,13 @@ public class LibraryTracker {
         Scanner scanner = new Scanner(System.in);
         
         // Create a new user
+        System.out.println(" ");
         System.out.print("Enter your name: ");
         String userName = scanner.nextLine();
         user currentUser = new user(userName);
         
         System.out.println("\nWelcome to Library Tracker, " + userName + "!");
+
         
         // Main menu loop
         boolean running = true;
@@ -57,6 +59,15 @@ public class LibraryTracker {
         scanner.close();
     }
     
+    // Helper method to add a pause
+    private static void pause(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            // Handle interruption gracefully
+        }
+    }
+    
     // Method to add a book
     private static void addBookMenu(Scanner scanner, user currentUser) {
         System.out.println("\n=== ADD A BOOK ===");
@@ -81,6 +92,7 @@ public class LibraryTracker {
         currentUser.addBookToShelf(newBook);
         
         System.out.println("Book added successfully!");
+        pause(2); // Wait 2 seconds before returning to menu
     }
     
     // Method to remove a book
@@ -129,5 +141,6 @@ public class LibraryTracker {
         currentUser.addBookToShelf(book5);
         
         System.out.println("Added 5 sample books to your shelf!");
+        pause(2); // Wait 2 seconds before returning to menu
     }
 }
